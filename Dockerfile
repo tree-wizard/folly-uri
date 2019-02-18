@@ -25,8 +25,9 @@ RUN git clone https://github.com/facebook/folly /root/proxygen/proxygen/folly
 RUN mv /root/folly-uri/replacements/FollyConfigChecks.cmake /root/proxygen/proxygen/folly/CMake/FollyConfigChecks.cmake
 
 RUN mv /root/folly-uri/replacements/Subprocess.cpp /root/proxygen/proxygen/folly/folly/Subprocess.cpp
-RUN mv /root/folly-uri/replacements/MacAddress.cpp /root/proxygen/proxygen/folly/folly/MacAddress.cpp
-RUN mv /root/folly-uri/replacements/Range.h /root/proxygen/proxygen/folly/folly/Range.h
+RUN mv /root/folly-uri/replacements/match_results.hpp /usr/include/boost/regex/v4/match_results.hpp
+RUN mv /root/folly-uri/replacements/Uri.cpp /root/proxygen/proxygen/folly/folly/Uri.cpp
 
 #RUN ./deps.sh
 # RUN ldconfig
+
