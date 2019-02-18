@@ -1,4 +1,4 @@
-# Folly Macaddr Dockerfile
+# Folly uri Dockerfile
 
 FROM ubuntu:latest
 RUN apt-get update --fix-missing
@@ -18,17 +18,15 @@ RUN apt-get install --yes g++     cmake     libboost-all-dev     libevent-dev   
 
 RUN git clone https://github.com/facebook/proxygen /root/proxygen/
 
-RUN git clone https://github.com/xxyyx/ssl-folly /root/ssl-folly
-RUN chmod +777 /root/ssl-folly/deps.sh
-RUN mv /root/ssl-folly/deps.sh /root/proxygen/proxygen/deps.sh
+RUN git clone https://github.com/xxyyx/folly-uri /root/folly-uri
+RUN chmod +777 /root/folly-uri/deps.sh
+RUN mv /root/folly-uri/deps.sh /root/proxygen/proxygen/deps.sh
 RUN git clone https://github.com/facebook/folly /root/proxygen/proxygen/folly
-RUN mv /root/ssl-folly/FollyConfigChecks.cmake /root/proxygen/proxygen/folly/CMake/FollyConfigChecks.cmake
+RUN mv /root/folly-uri/replacements/FollyConfigChecks.cmake /root/proxygen/proxygen/folly/CMake/FollyConfigChecks.cmake
 
-RUN mv /root/ssl-folly/replacements/Subprocess.cpp /root/proxygen/proxygen/folly/folly/Subprocess.cpp
-RUN mv /root/ssl-folly/replacements/json_pointer.cpp /root/proxygen/proxygen/folly/folly/json_pointer.cpp
-RUN mv /root/ssl-folly/replacements/Bser.h /root/proxygen/proxygen/folly/folly/experimental/bser/Bser.h
-RUN mv /root/ssl-folly/replacements/Expected.h /root/proxygen/proxygen/folly/folly/Expected.h
+RUN mv /root/folly-uri/replacements/Subprocess.cpp /root/proxygen/proxygen/folly/folly/Subprocess.cpp
+RUN mv /root/folly-uri/replacements/MacAddress.cpp /root/proxygen/proxygen/folly/folly/MacAddress.cpp
+RUN mv /root/folly-uri/replacements/Range.h /root/proxygen/proxygen/folly/folly/Range.h
 
 #RUN ./deps.sh
 # RUN ldconfig
-
