@@ -1,4 +1,4 @@
-JOBS=1
+JOBS=2
 USAGE="./deps.sh [-j num_jobs]"
 while [ "$1" != "" ]; do
   case $1 in
