@@ -21,8 +21,8 @@ RUN git clone https://github.com/facebook/proxygen /root/proxygen/
 RUN git clone https://github.com/facebook/folly /root/proxygen/proxygen/folly
 
 #download and replace files.
-RUN git clone https://github.com/xxyyx/ipaddr-folly /root/ipaddr-folly
-RUN chmod +777 /root/ipaddr-folly/replacements/deps.sh
+RUN git clone https://github.com/xxyyx/folly-uri /root/folly-uri
+RUN chmod +777 /root/folly-uri/replacements/deps.sh
 
 RUN mv /root/folly-uri/replacements/deps.sh /root/proxygen/proxygen/deps.sh
 RUN mv /root/folly-uri/replacements/FollyConfigChecks.cmake /root/proxygen/proxygen/folly/CMake/FollyConfigChecks.cmake
