@@ -11,4 +11,4 @@ clean:
 
 Fuzzer: fuzzer.cpp
 
-	$(CXX) -o fuzzer fuzzer.cpp -I$(FOLLY)/include $(FOLLY)/_build/libfolly.so -g -lcrypto -fsanitize=fuzzer,undefined -fsanitize-recover=address -lfolly -lboost_system -lglog
+	$(CXX) -o fuzzer fuzzer.cpp -I$(FOLLY)/include $(FOLLY)/_build/libfolly.so -g -lcrypto -fsanitize=fuzzer,undefined,address -lfolly -lboost_system -lglog
