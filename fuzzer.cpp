@@ -2,7 +2,7 @@
 #include <folly/String.h>
 
 extern "C" int LLVMFuzzerTestOneInput(const char *data, size_t size) {
-        folly::fbstring bin1(data, size);
+        folly::StringPiece bin1(data, size);
 
         folly::Uri u(bin1);
         u.scheme();
